@@ -1,5 +1,5 @@
-﻿  Telewizor.cpp
-  but.cpp
-  main.cpp
-  Generowanie kodu...
+﻿  main.cpp
+C:\Users\oem\source\repos\Magazyn\Magazyn\Telewizor.h(7,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\oem\source\repos\Magazyn\Magazyn\But.h(7,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\oem\source\repos\Magazyn\Magazyn\main.cpp(103,17): warning C4834: odrzucanie zwracanej wartości funkcji z atrybutem „nodiscard”
   Magazyn.vcxproj -> C:\Users\oem\source\repos\Magazyn\x64\Debug\Magazyn.exe

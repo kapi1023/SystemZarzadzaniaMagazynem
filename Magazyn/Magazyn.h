@@ -10,8 +10,10 @@ class Magazyn {
         Produkt* wyszukaj_produkt(const string& nazwa);
         void wyswietl_produkty();
         void aktualizuj_stan();
+        void zapisz_do_pliku_csv(const string& nazwa_pliku);
+
 
     private:
         vector<Produkt*> produkty_;
-        mutex mutex_;
+        mutable mutex mutex_;
 };

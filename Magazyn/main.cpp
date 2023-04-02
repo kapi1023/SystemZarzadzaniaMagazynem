@@ -5,6 +5,8 @@
 #include "Magazyn.h"
 #include "Telewizor.h"
 #include "But.h"
+#include <iomanip>
+
 using namespace std;
 void dodaj_produkt(Magazyn& magazyn) {
     cout << "Dodawanie produktu\n";
@@ -49,6 +51,15 @@ void wyswietl_stan(Magazyn& magazyn) {
     cout << "Stan magazynu:\n";
     magazyn.wyswietl_produkty();
 }
+void zapis_do_pliku(Magazyn& magazyn) {
+    string filename;
+    cout << "Podaj nazwe pliku do jakiego chcesz zapisać magazyn: ";
+    cin >> filename;
+    magazyn.zapisz_do_pliku_csv(filename);
+
+    cout << "Stan magazynu zostal zapisany do pliku "<<filename<<".csv\n";
+}
+
 
 void usun_produkt(Magazyn& magazyn) {
     cout << "Usuwanie produktu\n";
@@ -89,16 +100,18 @@ void addExampleData(Magazyn& magazyn) {
 
 int main() {
     Magazyn magazyn;
+    setprecision(2);
     int wybor = 0;
     addExampleData(magazyn);
-    while (wybor != 5) {
+    while (wybor != 6) {
         cout << "----- MENU -----" << endl;
         cout << "Wybierz opcje:" << endl;
         cout << "1. Dodaj produkt" << endl;
         cout << "2. Usun produkt" << endl;
         cout << "3. Wyswietl liste produktow" << endl;
         cout << "4. Wyszukaj produkt" << endl;
-        cout << "5. Wyjdz z programu" << endl;
+        cout << "5. Zapis do pliku" << endl;
+        cout << "6. Wyjdz z programu" << endl;
         cout << "Twoj wybor: ";
         cin >> wybor;
         cout <<"----------------" << endl;
@@ -116,6 +129,9 @@ int main() {
             wyszukaj_produkt(magazyn);
             break;
         case 5:
+            zapis_do_pliku(magazyn);
+            break;
+        case 6:
             cout << "Koniec programu." << endl;
             break;
         default:
